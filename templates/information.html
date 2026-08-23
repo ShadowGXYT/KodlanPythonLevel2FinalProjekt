@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Informationen – Klimawandel</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <a href="/" class="logo">
+            🌍 Klimawandel
+        </a>
+
+        <div class="nav-links">
+            <a href="/" data-i18n="nav.home">Startseite</a>
+            <a href="/information" data-i18n="nav.info">Informationen</a>
+            <a href="/quiz" data-i18n="nav.quiz">Quiz</a>
+        </div>
+
+        <div class="lang-switcher">
+            <a href="{{ request.path }}?lang=de" class="{% if lang == 'de' %}active{% endif %}" data-lang-switch="de">DE</a>
+            <a href="{{ request.path }}?lang=en" class="{% if lang == 'en' %}active{% endif %}" data-lang-switch="en">EN</a>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+
+    <section class="page-header">
+
+        <p class="small-title" data-i18n="info.tagline">DAS KLIMA VERSTEHEN</p>
+
+        <h1>
+            <span data-i18n="info.title1">Was ist</span><br>
+            <span data-i18n="info.title2">Klimawandel?</span>
+        </h1>
+
+        <p data-i18n="info.text">
+            Der Klimawandel beschreibt langfristige Veränderungen
+            des Klimas auf der Erde.
+        </p>
+
+    </section>
+
+
+    <section class="info-section">
+
+        <div class="info-number">01</div>
+
+        <div>
+            <h2 data-i18n="info.section1.title">Was ist Klimawandel?</h2>
+
+            <p data-i18n="info.section1.p1">
+                Das Klima der Erde hat sich im Laufe der Geschichte
+                immer wieder verändert. Heute beobachten wir jedoch
+                eine besonders schnelle Erwärmung der Erde.
+            </p>
+
+            <p data-i18n="info.section1.p2">
+                Ein wichtiger Grund dafür ist der Mensch. Durch die
+                Verbrennung von Kohle, Erdöl und Erdgas entstehen
+                Treibhausgase. Diese halten Wärme in der Atmosphäre
+                zurück und verstärken den natürlichen Treibhauseffekt.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="info-section">
+
+        <div class="info-number">02</div>
+
+        <div>
+            <h2 data-i18n="info.section2.title">Was verursacht den Klimawandel?</h2>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <span>🏭</span>
+                    <h3 data-i18n="info.section2.industry.title">Industrie</h3>
+                    <p data-i18n="info.section2.industry.text">
+                        Viele industrielle Prozesse verursachen
+                        Treibhausgasemissionen.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <span>🚗</span>
+                    <h3 data-i18n="info.section2.transport.title">Verkehr</h3>
+                    <p data-i18n="info.section2.transport.text">
+                        Autos, Flugzeuge und andere Verkehrsmittel
+                        können fossile Brennstoffe verbrauchen.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <span>🌳</span>
+                    <h3 data-i18n="info.section2.deforestation.title">Abholzung</h3>
+                    <p data-i18n="info.section2.deforestation.text">
+                        Wälder speichern CO₂. Werden sie abgeholzt,
+                        geht diese Speicherfunktion teilweise verloren.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <span>🐄</span>
+                    <h3 data-i18n="info.section2.agriculture.title">Landwirtschaft</h3>
+                    <p data-i18n="info.section2.agriculture.text">
+                        Auch die Landwirtschaft kann verschiedene
+                        Treibhausgase freisetzen.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="info-section">
+
+        <div class="info-number">03</div>
+
+        <div>
+            <h2 data-i18n="info.section3.title">Welche Folgen gibt es?</h2>
+
+            <ul class="effects">
+
+                <li data-i18n="info.section3.items.0">🌡️ Steigende Durchschnittstemperaturen</li>
+
+                <li data-i18n="info.section3.items.1">🧊 Schmelzende Gletscher und Eisschilde</li>
+
+                <li data-i18n="info.section3.items.2">🌊 Steigender Meeresspiegel</li>
+
+                <li data-i18n="info.section3.items.3">🔥 Häufigere und intensivere Hitzewellen</li>
+
+                <li data-i18n="info.section3.items.4">🐻 Veränderungen für Tiere und Ökosysteme</li>
+
+                <li data-i18n="info.section3.items.5">🌧️ Veränderungen von Niederschlagsmustern</li>
+
+            </ul>
+        </div>
+
+    </section>
+
+
+    <section class="info-section">
+
+        <div class="info-number">04</div>
+
+        <div>
+            <h2 data-i18n="info.section4.title">Was können wir tun?</h2>
+
+            <p data-i18n="info.section4.text">
+                Der Klimawandel ist eine große Herausforderung.
+                Es gibt jedoch viele Möglichkeiten, Emissionen zu
+                reduzieren und das Klima zu schützen.
+            </p>
+
+            <div class="solution-list">
+
+                <div data-i18n="info.section4.items.0">🌱 Erneuerbare Energien nutzen</div>
+
+                <div data-i18n="info.section4.items.1">⚡ Energie sparen</div>
+
+                <div data-i18n="info.section4.items.2">🚲 Nachhaltige Verkehrsmittel verwenden</div>
+
+                <div data-i18n="info.section4.items.3">🌳 Wälder schützen</div>
+
+                <div data-i18n="info.section4.items.4">♻️ Ressourcen bewusster verwenden</div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="call-to-action">
+
+        <h2 data-i18n="info.ctaTitle">
+            Hast du alles gelesen?
+        </h2>
+
+        <p data-i18n="info.ctaText">
+            Dann teste jetzt dein Wissen!
+        </p>
+
+        <a href="/quiz" class="button" data-i18n="info.ctaButton">
+            Quiz starten →
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p data-i18n="footer">© 2026 Klimawandel verstehen</p>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>

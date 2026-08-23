@@ -1,25 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Application</title>
+
+    <title>Klimawandel verstehen</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
-    <header>
-        <h1>Welcome to My Web Application</h1>
-    </header>
 
-    <main>
-        <p>This is the main content of the web application.</p>
-        <a href="{{ url_for('about') }}">About Us</a>
-    </main>
+<header>
+    <nav class="navbar">
 
-    <footer>
-        <p>&copy; 2024 My Web Application. All rights reserved.</p>
-    </footer>
+        <a href="/" class="logo">
+            🌍 Klimawandel
+        </a>
+
+        <div class="nav-links">
+            <a href="/" data-i18n="nav.home">Startseite</a>
+            <a href="/information" data-i18n="nav.info">Informationen</a>
+            <a href="/quiz" data-i18n="nav.quiz">Quiz</a>
+        </div>
+
+        <div class="lang-switcher">
+            <a href="{{ request.path }}?lang=de" class="{% if lang == 'de' %}active{% endif %}" data-lang-switch="de">DE</a>
+            <a href="{{ request.path }}?lang=en" class="{% if lang == 'en' %}active{% endif %}" data-lang-switch="en">EN</a>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title" data-i18n="home.tagline">UNSERE ERDE. UNSERE ZUKUNFT.</p>
+
+            <h1>
+                <span data-i18n="home.title">Klimawandel</span><br>
+                <span data-i18n="home.title2">verstehen.</span>
+            </h1>
+
+            <p data-i18n="home.description">
+                Erfahre, was Klimawandel bedeutet, warum er entsteht,
+                welche Folgen er hat und was wir dagegen tun können.
+            </p>
+
+            <div class="buttons">
+                <a href="/information" class="button" data-i18n="home.learnMore">
+                    Mehr erfahren
+                </a>
+
+                <a href="/quiz" class="button button-secondary" data-i18n="home.startQuiz">
+                    Quiz starten →
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="topics">
+
+        <h2 data-i18n="home.topicTitle">Was möchtest du wissen?</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🌡️</div>
+                <h3 data-i18n="home.card1.title">Was ist Klimawandel?</h3>
+                <p data-i18n="home.card1.text">
+                    Erfahre, was Klimawandel bedeutet und
+                    warum sich unser Klima verändert.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏭</div>
+                <h3 data-i18n="home.card2.title">Ursachen</h3>
+                <p data-i18n="home.card2.text">
+                    Entdecke, welche menschlichen Aktivitäten
+                    den Klimawandel beeinflussen.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌊</div>
+                <h3 data-i18n="home.card3.title">Folgen</h3>
+                <p data-i18n="home.card3.text">
+                    Erfahre, welche Auswirkungen die
+                    Erderwärmung auf unseren Planeten hat.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌱</div>
+                <h3 data-i18n="home.card4.title">Lösungen</h3>
+                <p data-i18n="home.card4.text">
+                    Entdecke Möglichkeiten, wie wir
+                    das Klima schützen können.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="quiz-preview">
+
+        <div>
+            <p class="small-title" data-i18n="home.quizTag">WISSEN TESTEN</p>
+
+            <h2 data-i18n="home.quizTitle">
+                Wie gut kennst du
+                den Klimawandel?
+            </h2>
+
+            <p data-i18n="home.quizText">
+                Teste dein Wissen mit unserem Quiz und
+                finde heraus, wie viel du bereits weißt.
+            </p>
+
+            <a href="/quiz" class="button" data-i18n="home.startQuiz">
+                Quiz starten →
+            </a>
+        </div>
+
+        <div class="quiz-icon">
+            🧠
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p data-i18n="footer">© 2026 Klimawandel verstehen</p>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </body>
 </html>

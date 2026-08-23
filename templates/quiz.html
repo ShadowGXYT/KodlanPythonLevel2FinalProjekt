@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz – Klimawandel</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <a href="/" class="logo">
+            🌍 Klimawandel
+        </a>
+
+        <div class="nav-links">
+            <a href="/" data-i18n="nav.home">Startseite</a>
+            <a href="/information" data-i18n="nav.info">Informationen</a>
+            <a href="/quiz" data-i18n="nav.quiz">Quiz</a>
+        </div>
+
+        <div class="lang-switcher">
+            <a href="{{ request.path }}?lang=de" class="{% if lang == 'de' %}active{% endif %}" data-lang-switch="de">DE</a>
+            <a href="{{ request.path }}?lang=en" class="{% if lang == 'en' %}active{% endif %}" data-lang-switch="en">EN</a>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+
+    <section class="quiz-page">
+
+        {% if finished %}
+
+            <div class="result">
+
+                <p class="small-title" data-i18n="quiz.finished">QUIZ BEENDET</p>
+
+                <h1 data-i18n="quiz.result">Dein Ergebnis</h1>
+
+                <div class="score">
+                    {{ score }} / {{ questions|length }}
+                </div>
+
+                {% if score == questions|length %}
+
+                    <h2 data-i18n="quiz.expert">🌍 Klima-Experte!</h2>
+
+                    <p data-i18n="quiz.expertText">
+                        Perfekt! Du kennst dich sehr gut
+                        mit dem Klimawandel aus.
+                    </p>
+
+                {% elif score >= 3 %}
+
+                    <h2 data-i18n="quiz.good">🌳 Sehr gut!</h2>
+
+                    <p data-i18n="quiz.goodText">
+                        Du hast bereits ein gutes Wissen
+                        über den Klimawandel.
+                    </p>
+
+                {% else %}
+
+                    <h2 data-i18n="quiz.learnMore">🌱 Weiter lernen!</h2>
+
+                    <p data-i18n="quiz.learnMoreText">
+                        Schau dir die Informationen noch einmal
+                        an und versuche das Quiz erneut.
+                    </p>
+
+                {% endif %}
+
+                <br>
+
+                <a href="/quiz" class="button" data-i18n="quiz.repeat">
+                    Quiz wiederholen
+                </a>
+
+                <a href="/information" class="button button-secondary" data-i18n="quiz.infoButton">
+                    Informationen ansehen
+                </a>
+
+            </div>
+
+        {% else %}
+
+            <div class="quiz-header">
+
+                <p class="small-title" data-i18n="quiz.introTag">WISSENSTEST</p>
+
+                <h1 data-i18n="home.quizTitle">
+                    Wie gut kennst du
+                    den Klimawandel?
+                </h1>
+
+                <p data-i18n="quiz.introText">
+                    Beantworte die folgenden Fragen.
+                </p>
+
+            </div>
+
+
+            <form method="POST">
+
+                {% for question in questions %}
+
+                    {% set question_index = loop.index0 %}
+
+                    <div class="question">
+
+                        <div class="question-number">
+                            <span data-i18n="quiz.questionLabel">Frage</span> {{ loop.index }} / {{ questions|length }}
+                        </div>
+
+                        <h2>
+                            {{ question.question }}
+                        </h2>
+
+                        <div class="answers">
+
+                            {% for answer in question.answers %}
+
+                                <label class="answer">
+
+                                    <input
+                                        type="radio"
+                                        name="question_{{ question_index }}"
+                                        value="{{ loop.index0 }}"
+                                        required
+                                    >
+
+                                    <span>
+                                        {{ answer }}
+                                    </span>
+
+                                </label>
+
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+
+                <button type="submit" class="button submit-button" data-i18n="quiz.submit">
+                    Ergebnis anzeigen →
+                </button>
+
+            </form>
+
+        {% endif %}
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p data-i18n="footer">© 2026 Klimawandel verstehen</p>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
