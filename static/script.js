@@ -156,6 +156,85 @@ const translations = {
             questionLabel: 'Question',
             submit: 'Show result →'
         }
+    },
+    ru: {
+        nav: { home: 'Главная', info: 'Информация', quiz: 'Викторина' },
+        footer: '© 2026 Понимание изменения климата',
+        home: {
+            tagline: 'НАША ЗЕМЛЯ. НАШЕ БУДУЩЕЕ.',
+            title: 'Изменение',
+            title2: 'климата.',
+            description: 'Узнайте, что означает изменение климата, почему оно происходит, какие последствия оно имеет и что мы можем сделать.',
+            learnMore: 'Узнать больше',
+            startQuiz: 'Начать викторину →',
+            topicTitle: 'Что вы хотите узнать?',
+            card1: { title: 'Что такое изменение климата?', text: 'Узнайте, что означает изменение климата и почему меняется наш климат.' },
+            card2: { title: 'Причины', text: 'Узнайте, какие человеческие действия влияют на изменение климата.' },
+            card3: { title: 'Последствия', text: 'Узнайте, какие последствия глобального потепления есть для нашей планеты.' },
+            card4: { title: 'Решения', text: 'Узнайте, как можно защитить климат.' },
+            quizTag: 'ПРОВЕРЬТЕ ЗНАНИЯ',
+            quizTitle: 'Насколько хорошо вы знаете изменение климата?',
+            quizText: 'Проверьте свои знания с помощью викторины и узнайте, сколько вы уже знаете.'
+        },
+        info: {
+            tagline: 'ПОНИМАНИЕ КЛИМАТА',
+            title1: 'Что такое',
+            title2: 'изменение климата?',
+            text: 'Изменение климата описывает долгосрочные изменения климата Земли.',
+            section1: {
+                title: 'Что такое изменение климата?',
+                p1: 'Климат Земли менялся много раз на протяжении всей истории. Однако сегодня мы наблюдаем особенно быстрое потепление планеты.',
+                p2: 'Важной причиной является человек. Сжигание угля, нефти и газа приводит к выбросам парниковых газов. Они удерживают тепло в атмосфере и усиливают естественный парниковый эффект.'
+            },
+            section2: {
+                title: 'Что вызывает изменение климата?',
+                industry: { title: 'Промышленность', text: 'Многие промышленные процессы вызывают выбросы парниковых газов.' },
+                transport: { title: 'Транспорт', text: 'Автомобили, самолёты и другие средства передвижения могут использовать ископаемое топливо.' },
+                deforestation: { title: 'Вырубка лесов', text: 'Леса хранят CO₂. Если их вырубить, эта функция частично теряется.' },
+                agriculture: { title: 'Сельское хозяйство', text: 'Сельское хозяйство тоже может выделять различные парниковые газы.' }
+            },
+            section3: {
+                title: 'Какие последствия?',
+                items: [
+                    '🌡️ Рост средней температуры',
+                    '🧊 Тающие ледники и ледяные щиты',
+                    '🌊 Поднятие уровня моря',
+                    '🔥 Более частые и сильные волны жары',
+                    '🐻 Изменения для животных и экосистем',
+                    '🌧️ Изменения в режиме осадков'
+                ]
+            },
+            section4: {
+                title: 'Что мы можем сделать?',
+                text: 'Изменение климата — большая проблема. Однако существует много способов сократить выбросы и защитить климат.',
+                items: [
+                    '🌱 Использовать возобновляемую энергетику',
+                    '⚡ Экономить энергию',
+                    '🚲 Использовать экологичный транспорт',
+                    '🌳 Защищать леса',
+                    '♻️ Более осознанно использовать ресурсы'
+                ]
+            },
+            ctaTitle: 'Вы всё прочитали?',
+            ctaText: 'Тогда проверьте свои знания!',
+            ctaButton: 'Начать викторину →'
+        },
+        quiz: {
+            finished: 'ВИКТОРИНА ЗАВЕРШЕНА',
+            result: 'Ваш результат',
+            expert: '🌍 Эксперт по климату!',
+            expertText: 'Отлично! Вы очень хорошо знаете изменение климата.',
+            good: '🌳 Очень хорошо!',
+            goodText: 'У вас уже хорошие знания об изменении климата.',
+            learnMore: '🌱 Продолжайте учиться!',
+            learnMoreText: 'Посмотрите информацию ещё раз и попробуйте викторину снова.',
+            repeat: 'Повторить викторину',
+            infoButton: 'Посмотреть информацию',
+            introTag: 'ПРОВЕРОЧНАЯ ВИКТОРИНА',
+            introText: 'Ответьте на следующие вопросы.',
+            questionLabel: 'Вопрос',
+            submit: 'Показать результат →'
+        }
     }
 };
 
@@ -180,7 +259,7 @@ function applyTranslations(lang) {
         button.classList.toggle('active', button.dataset.langSwitch === currentLanguage);
     });
 
-    const langCode = currentLanguage === 'en' ? 'en' : 'de';
+    const langCode = currentLanguage === 'en' ? 'en' : (currentLanguage === 'ru' ? 'ru' : 'de');
     localStorage.setItem('preferredLanguage', langCode);
 }
 
@@ -188,13 +267,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const urlLang = urlParams.get('lang');
     const savedLang = localStorage.getItem('preferredLanguage');
-    const language = urlLang === 'en' ? 'en' : (urlLang === 'de' ? 'de' : (savedLang === 'en' ? 'en' : 'de'));
+
+    const language =
+        urlLang === 'en' ? 'en' :
+        urlLang === 'ru' ? 'ru' :
+        urlLang === 'de' ? 'de' :
+        savedLang === 'en' ? 'en' :
+        savedLang === 'ru' ? 'ru' :
+        'de';
 
     applyTranslations(language);
 
     document.querySelectorAll('[data-lang-switch]').forEach((button) => {
-        button.addEventListener('click', (event) => {
-            const nextLang = button.dataset.langSwitch === 'en' ? 'en' : 'de';
+        button.addEventListener('click', () => {
+            const nextLang = button.dataset.langSwitch === 'en' ? 'en' :
+                button.dataset.langSwitch === 'ru' ? 'ru' : 'de';
             const url = new URL(window.location.href);
             url.searchParams.set('lang', nextLang);
             window.location.href = url.toString();
