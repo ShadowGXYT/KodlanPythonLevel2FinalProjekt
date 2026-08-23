@@ -15,7 +15,10 @@ questions_de = [
         "correct": 0
     },
     {
-        "question": "Welches Gas trägt besonders stark zum vom Menschen verursachten Treibhauseffekt bei?",
+        "question": (
+            "Welches Gas trägt besonders stark zum vom Menschen "
+            "verursachten Treibhauseffekt bei?"
+        ),
         "answers": [
             "Sauerstoff",
             "Kohlendioxid (CO₂)",
@@ -25,7 +28,10 @@ questions_de = [
         "correct": 1
     },
     {
-        "question": "Was passiert durch die globale Erwärmung mit vielen Gletschern?",
+        "question": (
+            "Was passiert durch die globale Erwärmung mit vielen "
+            "Gletschern?"
+        ),
         "answers": [
             "Sie wachsen",
             "Sie bleiben immer gleich",
@@ -69,7 +75,10 @@ questions_en = [
         "correct": 0
     },
     {
-        "question": "Which gas contributes significantly to the human-caused greenhouse effect?",
+        "question": (
+            "Which gas contributes significantly to the human-caused "
+            "greenhouse effect?"
+        ),
         "answers": [
             "Oxygen",
             "Carbon dioxide (CO₂)",
