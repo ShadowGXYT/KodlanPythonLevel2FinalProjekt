@@ -21,6 +21,7 @@ questions_de = [
         ),
         "answers": [
             "Sauerstoff",
+            "Sauerstoff",
             "Kohlendioxid (CO₂)",
             "Helium",
             "Wasserstoff"
