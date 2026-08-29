@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Project Presentation - Climate Change Explained</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+    .presentation {
+        max-width: 1100px;
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .presentation-hero {
+        background: linear-gradient(135deg, #2F9A77, #58CDD0);
+        color: white;
+        border-radius: 25px;
+        padding: 70px 50px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .presentation-hero h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    .presentation-hero p {
+        font-size: 20px;
+        opacity: 0.95;
+    }
+
+    .section {
+        background: white;
+        border-radius: 20px;
+        padding: 35px;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    .section-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 45px;
+        height: 45px;
+
+        background: #2F9A77;
+        color: white;
+
+        border-radius: 50%;
+
+        font-weight: bold;
+        font-size: 18px;
+
+        margin-bottom: 15px;
+    }
+
+    .section h2 {
+        color: #2F9A77;
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .section p {
+        color: #40504b;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 25px;
+    }
+
+    .feature {
+        background: #f1faf7;
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+    }
+
+    .feature-icon {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .feature h3 {
+        color: #2F9A77;
+        margin-bottom: 8px;
+    }
+
+    .technology {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .tech {
+        background: #73C8BE;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 30px;
+        font-weight: bold;
+    }
+
+    .roadmap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 25px;
+    }
+
+    .roadmap-item {
+        border-left: 5px solid #2F9A77;
+        background: #f5faf8;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .roadmap-item h3 {
+        margin-top: 0;
+        color: #2F9A77;
+    }
+
+    .conclusion {
+        background: #243f38;
+        color: white;
+        border-radius: 25px;
+        padding: 50px;
+        text-align: center;
+    }
+
+    .conclusion h2 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .conclusion p {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .back-button {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 14px 25px;
+        background: #2F9A77;
+        color: white;
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: bold;
+        transition: 0.2s;
+    }
+
+    .back-button:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }
+
+    @media (max-width: 800px) {
+        .features,
+        .roadmap {
+            grid-template-columns: 1fr;
+        }
+
+        .presentation-hero {
+            padding: 45px 25px;
+        }
+
+        .presentation-hero h1 {
+            font-size: 36px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<main class="presentation">
+
+    <!-- HERO -->
+    <section class="presentation-hero">
+
+        <h1>Project Presentation</h1>
+
+        <p>
+            Climate Change Explained
+        </p>
+
+        <p>
+            Kodland Python Level 2 Final Project
+        </p>
+
+    </section>
+
+
+    <!-- 1 -->
+    <section class="section">
+
+        <div class="section-number">1</div>
+
+        <h2>What is my project?</h2>
+
+        <p>
+            My project is an educational website about climate change.
+            The goal is to explain the topic in a simple and understandable
+            way and then allow users to test their knowledge with an
+            interactive quiz.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">📚</div>
+
+                <h3>Learn</h3>
+
+                <p>
+                    Learn the basics of climate change.
+                </p>
+            </div>
+
+
+            <div class="feature">
+                <div class="feature-icon">🌍</div>
+
+                <h3>Understand</h3>
+
+                <p>
+                    Understand its causes and consequences.
+                </p>
+            </div>
+
+
+            <div class="feature">
+                <div class="feature-icon">🧠</div>
+
+                <h3>Test</h3>
+
+                <p>
+                    Test your knowledge with a quiz.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 2 -->
+    <section class="section">
+
+        <div class="section-number">2</div>
+
+        <h2>Who is the target audience?</h2>
+
+        <p>
+            The main target audience is children, teenagers and people
+            who are beginners in the topic of climate change.
+        </p>
+
+        <p>
+            The information is intentionally kept simple so that users
+            can understand the topic without needing advanced scientific
+            knowledge.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">👦</div>
+
+                <h3>Children & Teenagers</h3>
+
+                <p>
+                    Easy-to-understand explanations.
+                </p>
+            </div>
+
+
+            <div class="feature">
+                <div class="feature-icon">🌱</div>
+
+                <h3>Beginners</h3>
+
+                <p>
+                    A simple introduction to climate change.
+                </p>
+            </div>
+
+
+            <div class="feature">
+                <div class="feature-icon">🌐</div>
+
+                <h3>Multilingual Users</h3>
+
+                <p>
+                    German, English and Russian are supported.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 3 -->
+    <section class="section">
+
+        <div class="section-number">3</div>
+
+        <h2>How does the project work?</h2>
+
+        <p>
+            The website has different sections. Users can first read
+            information about climate change and then go to the quiz.
+        </p>
+
+        <div class="roadmap">
+
+            <div class="roadmap-item">
+
+                <h3>Step 1</h3>
+
+                <p>
+                    Open the website and choose a language.
+                </p>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+                <h3>Step 2</h3>
+
+                <p>
+                    Read the information about climate change.
+                </p>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+                <h3>Step 3</h3>
+
+                <p>
+                    Start the quiz and answer the questions.
+                </p>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+                <h3>Step 4</h3>
+
+                <p>
+                    See how many questions you answered correctly.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 4 -->
+    <section class="section">
+
+        <div class="section-number">4</div>
+
+        <h2>Technology</h2>
+
+        <p>
+            I used several technologies to build the project.
+            Python is responsible for the backend and Flask connects
+            the backend with the website.
+        </p>
+
+        <div class="technology">
+
+            <span class="tech">Python</span>
+
+            <span class="tech">Flask</span>
+
+            <span class="tech">HTML</span>
+
+            <span class="tech">CSS</span>
+
+            <span class="tech">JavaScript</span>
+
+            <span class="tech">Jinja2</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- 5 -->
+    <section class="section">
+
+        <div class="section-number">5</div>
+
+        <h2>Will I continue developing it?</h2>
+
+        <p>
+            Yes. I would like to continue developing the project.
+            The current version is a basic learning platform, but it
+            could become much larger in the future.
+        </p>
+
+        <p>
+            My goal would be to make the website more interactive and
+            give users more possibilities to learn and track their progress.
+        </p>
+
+    </section>
+
+
+    <!-- 6 -->
+    <section class="section">
+
+        <div class="section-number">6</div>
+
+        <h2>Possible improvements</h2>
+
+        <div class="roadmap">
+
+            <div class="roadmap-item">
+
+                <h3>📚 More content</h3>
+
+                <p>
+                    Add more topics about climate change,
+                    energy and the environment.
+                </p>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+                <h3>🎯 Difficulty levels</h3>
+
+                <p>
+                    Add Easy, Medium and Hard quiz modes.
+                </p>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+                <h3>🏆 Ranking system</h3>
+
+                <p>
+                    Allow users to save their scores and compare results.
+                </p>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+                <h3>👤 User accounts</h3>
+
+                <p>
+                    Save learning progress and previous quiz results.
+                </p>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+                <h3>🎲 Random questions</h3>
+
+                <p>
+                    Show different questions every time.
+                </p>
+
+            </div>
+
+
+            <div class="roadmap-item">
+
+                <h3>🌐 More languages</h3>
+
+                <p>
+                    Add additional languages to reach more users.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+
+        <h2>Conclusion</h2>
+
+        <p>
+            My goal was to create a website that is both educational
+            and interactive.
+        </p>
+
+        <p>
+            Users can first learn about climate change and then test
+            their knowledge with the quiz.
+        </p>
+
+        <p>
+            During this project, I was able to practice Python, Flask,
+            HTML, CSS and JavaScript.
+        </p>
+
+        <a href="/" class="back-button">
+            ← Back to the website
+        </a>
+
+    </section>
+
+</main>
+```
+
+</body>
+</html>

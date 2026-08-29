@@ -392,6 +392,20 @@ def information():
     )
 
 
+@app.route("/")
+def project():
+    language = flask.request.args.get("lang", "de")
+
+    if language not in translations:
+        language = "de"
+
+    return flask.render_template(
+        "project.html",
+        lang=language,
+        t=translations[language]
+    )
+
+
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():
     language = flask.request.args.get("lang", "de")
