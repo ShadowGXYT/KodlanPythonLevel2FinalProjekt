@@ -392,7 +392,7 @@ def information():
     )
 
 
-@app.route("/")
+@app.route("/project")
 def project():
     language = flask.request.args.get("lang", "de")
 
