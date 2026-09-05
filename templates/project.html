@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
 <title>Project Presentation - Climate Change Explained</title>
 
 <link rel="stylesheet"
@@ -184,13 +183,34 @@
         }
     }
 </style>
-```
+
 
 </head>
 
 <body>
+<header>
+    <nav class="navbar">
 
-```
+        <a href="/" class="logo">
+            🌍 Klimawandel
+        </a>
+
+        <div class="nav-links">
+            <a href="/" data-i18n="nav.home">Home</a>
+            <a href="/information" data-i18n="nav.info">Information</a>
+            <a href="/quiz" data-i18n="nav.quiz">Quiz</a>
+            <a href="/project" data-i18n="nav.project">Project Presentation</a>
+        </div>
+
+        <div class="lang-switcher">
+
+            <a href="{{ request.path }}?lang=de" class="{% if lang == 'de' %}active{% endif %}" data-lang-switch="de">DE</a>
+            <a href="{{ request.path }}?lang=en" class="{% if lang == 'en' %}active{% endif %}" data-lang-switch="en">EN</a>
+            <a href="{{ request.path }}?lang=ru" class="{% if lang == 'ru' %}active{% endif %}" data-lang-switch="ru">RU</a>
+        </div>
+    </nav>
+</header>
+
 <main class="presentation">
 
     <!-- HERO -->
